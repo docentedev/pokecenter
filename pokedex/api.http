@@ -1,0 +1,39 @@
+@apiBaseUrl = http://localhost:3333/api
+@id = b8d59b22-bf2c-494d-8155-6f81e7cf740e
+
+### Get all Pokémon
+GET {{apiBaseUrl}}/pokemons
+
+### Get a Pokémon by ID
+GET {{apiBaseUrl}}/pokemons/{id}
+
+### Create a new Pokémon
+POST {{apiBaseUrl}}/pokemons
+Content-Type: application/json
+
+{
+  "id": "b8d59b22-bf2c-494d-8155-6f81e7cf740e",
+  "name": "Pikachu",
+  "type": "Electric"
+}
+
+### Update an existing Pokémon
+PUT {{apiBaseUrl}}/pokemons/{{id}}
+Content-Type: application/json
+
+{
+  "id": "b8d59b22-bf2c-494d-8155-6f81e7cf740e",
+  "name": "Pikachu",
+  "type": "Electric",
+  "pokedexNumber": 25
+}
+
+### Create a new Pokémon
+POST {{apiBaseUrl}}/pokemons
+Content-Type: application/json
+
+{
+  "name": "Snorlax",
+  "type": "Normal",
+  "pokedexNumber": 143
+}

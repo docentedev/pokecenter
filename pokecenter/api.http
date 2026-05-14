@@ -1,0 +1,37 @@
+@baseUrl = http://localhost:3334/api
+@pokecenterUrl = {{baseUrl}}/pokecenter
+@authUrl = {{baseUrl}}/auth
+
+### =========================
+### AUTH ENDPOINTS
+### =========================
+
+### Register a new user
+POST {{authUrl}}/register
+Content-Type: application/json
+
+{
+  "username": "testuser",
+  "password": "password123"
+}
+
+### Login with existing user
+POST {{authUrl}}/login
+Content-Type: application/json
+
+{
+  "username": "testuser",
+  "password": "password123"
+}
+
+### Validate JWT Token
+GET {{authUrl}}/validate
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0dXNlciIsImlhdCI6MTc3ODcxMDMzNiwiZXhwIjoxNzc4NzEzOTM2fQ.-v6kruFod6ovXqmGsa2zIbjItbYV9xHjvlJp6MVzuko
+
+### =========================
+### POKECENTER ENDPOINTS
+### =========================
+
+### Get all Pokémon in the PokéCenter
+GET {{pokecenterUrl}}/pokemons
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0dXNlciIsImlhdCI6MTc3ODcxMDMzNiwiZXhwIjoxNzc4NzEzOTM2fQ.-v6kruFod6ovXqmGsa2zIbjItbYV9xHjvlJp6MVzuko
